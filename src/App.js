@@ -8,7 +8,6 @@ import githubIcon from './github.svg';
 import linkedinIconHover from './linkedInHover.svg';
 import twitterIconHover from './twitterHover.svg';
 import githubIconHover from './githubHover.svg';
-import email from './email.png';
 import './App.css';
 
 class App extends Component {
@@ -43,21 +42,6 @@ class My404Component extends Component {
 				<h2>404</h2>
 				<p>Sorry, that page doesn’t exist!</p>
 			</article>
-		);
-	}
-}
-
-class Ad extends Component {
-	componentDidMount() {
-		(window.adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-3535299454867786",
-			enable_page_level_ads: true
-		});
-	}
-
-	render() {
-		return (
-			null
 		);
 	}
 }
@@ -229,19 +213,11 @@ software tool.
 }
 
 class Header extends Component{
-	componentDidMount() {
-		const s = document.createElement('script');
-		s.type = 'text/javascript';
-		s.async = true;
-		s.innerHTML = "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-54TXN3H')";
-		document.head.appendChild(s);
-	}
 	render(){
 		return (
 			<header className="App-header">
         		<PersonSummary conf={this.props.conf} />
 				<Menu />
-				<Ad />
       		</header>
 		);
 	}
