@@ -8,8 +8,9 @@ import githubIcon from './github.svg';
 import linkedinIconHover from './linkedInHover.svg';
 import twitterIconHover from './twitterHover.svg';
 import githubIconHover from './githubHover.svg';
-import email from './email.png';
+import structuredDataVictor from './headers/headers.js';
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -128,6 +129,7 @@ class ContactMe extends Component{
 				<title>Contact Me - Victor Sesma</title>
 				<meta property="og:image" content={userImage} />
 				<link rel="canonical" href="https://victorsesma.com/contact-me" />
+				<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
 			</Helmet>
 				<ContactHeader />
 			</article>
@@ -143,6 +145,7 @@ class Home extends Component{
 					<title>Home - Victor Sesma</title>
 					<meta property="og:image" content={userImage} />
 					<link rel="canonical" href="https://victorsesma.com/" />
+					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
 				</Helmet>
 				<div className="Content">
 					<h1>Who Am I?</h1>
@@ -174,9 +177,17 @@ class CurriculumVitae extends Component{
 				{
 					isLoaded:true,
 					lifeEvents: {
+						lifeEvent0: {
+							StartDate: "01/01/2021",
+							EndDate: "Now",
+							Name: "Software Engieneer",
+							Summary: `I help building edgeretreats.com API and Website`,
+							Description: `I build new backend features in Go and in React. I use docker and kubernetes.`,
+							ShownOrder: 1
+						},
 						lifeEvent1: {
 							StartDate: "01/06/2018",
-							EndDate: "Now",
+							EndDate: "01/01/2021",
 							Name: "Software Engieneer",
 							Summary: `I help building the Filtered.com API`,
 							Description: `Build new backend features for filtered.com.`,
@@ -219,6 +230,7 @@ software tool.
 					<title>Curriculum Vitae - Victor Sesma</title>
 					<meta property="og:image" content={userImage} />
 					<link rel="canonical" href="https://victorsesma.com/curriculum-vitae" />
+					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
 				</Helmet>
 				{Object.keys(this.state.lifeEvents).map((lifeEvent)=>
 					<LifeEvent key={this.state.lifeEvents[lifeEvent].ShownOrder} lifeEvent={this.state.lifeEvents[lifeEvent]}/>
