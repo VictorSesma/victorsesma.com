@@ -20,7 +20,8 @@ export const structuredDataVictor = () => {
         'nationality': 'Spanish',
         'url': 'https://victorsesma.com',
         'sameAs': ['https://www.linkedin.com/in/victor-sesma-3b2291104/',
-            'https://twitter.com/victorsesma_']
+            'https://twitter.com/victorsesma_', 'https://www.goodreads.com/victor-sesma',
+            'https://github.com/leviatan89']
     };
     
     return JSON.stringify(data);

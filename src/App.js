@@ -21,6 +21,7 @@ class App extends Component {
 					<Switch>
 						<Route path="/" exact component={Home}/>
 						<Route path='/&*' component={Home}/> {/* This route helps with malformed queries */}
+						<Route path='/+*' component={Home}/> {/* This route helps with malformed queries */}
 						<Route
 							path="/curriculum-vitae"
 							render={() => (
@@ -140,7 +141,6 @@ class ContactMe extends Component{
 
 class Home extends Component{
 	render(){
-		console.log("------hheheheh")
 		return (
 			<article>
 				<Helmet>
