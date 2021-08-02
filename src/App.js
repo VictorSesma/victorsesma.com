@@ -19,7 +19,8 @@ class App extends Component {
 	      <div className="App">
 					<Header conf={this.props.conf} />
 					<Switch>
-						<Route path="/" exact strict component={Home}/>
+						<Route path="/" exact component={Home}/>
+						<Route path='/&*' component={Home}/> {/* This route helps with malformed queries */}
 						<Route
 							path="/curriculum-vitae"
 							render={() => (
@@ -42,7 +43,7 @@ class My404Component extends Component {
 		return (
 			<article>
 				<h2>404</h2>
-				<p>Sorry, that page doesn’t exist!</p>
+				<p>Sorry, the page doesn’t exist!</p>
 			</article>
 		);
 	}
@@ -139,6 +140,7 @@ class ContactMe extends Component{
 
 class Home extends Component{
 	render(){
+		console.log("------hheheheh")
 		return (
 			<article>
 				<Helmet>
