@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import userImage from './victorSesma.png';
 import linkedinIcon from './linkedIn.svg';
 import twitterIcon from './twitter.svg';
@@ -9,19 +9,20 @@ import linkedinIconHover from './linkedInHover.svg';
 import twitterIconHover from './twitterHover.svg';
 import githubIconHover from './githubHover.svg';
 import structuredDataVictor from './headers/headers.js';
+import cvEvents from './texts/cv.js'
 import './App.css';
 
 
 class App extends Component {
-  render() {
-    return (
-		<Router>
-	      <div className="App">
+	render() {
+		return (
+			<Router>
+				<div className="App">
 					<Header conf={this.props.conf} />
 					<Switch>
-						<Route path="/" exact component={Home}/>
-						<Route path='/&*' component={Home}/> {/* This route helps with malformed queries */}
-						<Route path='/+*' component={Home}/> {/* This route helps with malformed queries */}
+						<Route path="/" exact component={Home} />
+						<Route path='/&*' component={Home} /> {/* This route helps with malformed queries */}
+						<Route path='/+*' component={Home} /> {/* This route helps with malformed queries */}
 						<Route
 							path="/curriculum-vitae"
 							render={() => (
@@ -32,10 +33,10 @@ class App extends Component {
 						<Route component={My404Component} />
 					</Switch>
 					<Footer />
-	      </div>
-		</Router>
-    );
-  }
+				</div>
+			</Router>
+		);
+	}
 }
 
 
@@ -65,7 +66,7 @@ class Ad extends Component {
 	}
 }
 
-class ContactHeader extends Component{
+class ContactHeader extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -76,35 +77,35 @@ class ContactHeader extends Component{
 	}
 	handleMouseOverLinkedinEnter() {
 		this.setState({
-		 	imageLinkedin: linkedinIconHover
-		 });
+			imageLinkedin: linkedinIconHover
+		});
 	}
 	handleMouseOverLinkedinLeave() {
 		this.setState({
-		 	imageLinkedin: linkedinIcon
-		 });
+			imageLinkedin: linkedinIcon
+		});
 	}
 	handleMouseOverTwitterEnter() {
 		this.setState({
-		 	imageTwitter: twitterIconHover
-		 });
+			imageTwitter: twitterIconHover
+		});
 	}
 	handleMouseOverTwitterLeave() {
 		this.setState({
-		 	imageTwitter: twitterIcon
-		 });
-	}	
+			imageTwitter: twitterIcon
+		});
+	}
 	handleMouseOverGithubEnter() {
 		this.setState({
-		 	imageGithub: githubIconHover
-		 });
+			imageGithub: githubIconHover
+		});
 	}
 	handleMouseOverGithubLeave() {
 		this.setState({
-		 	imageGithub: githubIcon
-		 });
-	}	
-	render(){
+			imageGithub: githubIcon
+		});
+	}
+	render() {
 		return (
 			<div>
 				<h1>Get in Touch</h1>
@@ -112,10 +113,10 @@ class ContactHeader extends Component{
 					<img className="Contact-social" onMouseEnter={this.handleMouseOverLinkedinEnter.bind(this)} onMouseLeave={this.handleMouseOverLinkedinLeave.bind(this)} src={this.state.imageLinkedin} alt="Linkedin" />
 				</a>
 				<a href="https://twitter.com/VictorSesma_" target="_blank" rel="noopener noreferrer">
-					<img className="Contact-social" onMouseEnter={this.handleMouseOverTwitterEnter.bind(this)} onMouseLeave={this.handleMouseOverTwitterLeave.bind(this)} src={this.state.imageTwitter} alt="Twitter" /> 
+					<img className="Contact-social" onMouseEnter={this.handleMouseOverTwitterEnter.bind(this)} onMouseLeave={this.handleMouseOverTwitterLeave.bind(this)} src={this.state.imageTwitter} alt="Twitter" />
 				</a>
 				<a href="https://github.com/leviatan89" target="_blank" rel="noopener noreferrer">
-					<img className="Contact-social" onMouseEnter={this.handleMouseOverGithubEnter.bind(this)} onMouseLeave={this.handleMouseOverGithubLeave.bind(this)} src={this.state.imageGithub} alt="Github" /> 
+					<img className="Contact-social" onMouseEnter={this.handleMouseOverGithubEnter.bind(this)} onMouseLeave={this.handleMouseOverGithubLeave.bind(this)} src={this.state.imageGithub} alt="Github" />
 				</a>
 				<p>Or email me to <a className="App-link" href="mailto:hi@victorsesma.com?Subject=Can%20we%20talk?">hi@victorsesma.com</a></p>
 			</div>
@@ -123,24 +124,24 @@ class ContactHeader extends Component{
 	}
 }
 
-class ContactMe extends Component{
-	render(){
+class ContactMe extends Component {
+	render() {
 		return (
 			<article>
-			<Helmet>
-				<title>Contact Me - Victor Sesma</title>
-				<meta property="og:image" content={userImage} />
-				<link rel="canonical" href="https://victorsesma.com/contact-me" />
-				<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
-			</Helmet>
+				<Helmet>
+					<title>Contact Me - Victor Sesma</title>
+					<meta property="og:image" content={userImage} />
+					<link rel="canonical" href="https://victorsesma.com/contact-me" />
+					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
+				</Helmet>
 				<ContactHeader />
 			</article>
 		);
 	}
 }
 
-class Home extends Component{
-	render(){
+class Home extends Component {
+	render() {
 		return (
 			<article>
 				<Helmet>
@@ -151,11 +152,18 @@ class Home extends Component{
 				</Helmet>
 				<div className="Content">
 					<h1>Who Am I?</h1>
-					<p>I am a software engiennier based in London. In case this is important, I am Spanish and grew up in Alicante, the city I have lived in most of the time before I moved in to London.</p>
-					<p>I have been doing professional programing for the last 4 years in 2 different companies.</p>
-					<p>My career started with PHP and then swithechd to GoLang. I have done some experimetns in ReactJS. I am the Raspberry Pi type of geek.</p>
+					<p>I am a software engiennier based in London that grew up in Alicante, Spain.</p>
+					<p>I have been doing professional programing for the last 5 years.</p>
+					<p>My career started with PHP to then switch to Go (GoLang) as my main language but not the only.</p>
+					<p>During my career I am also using other technologies such Django Python and ReactJS.</p>
+					<p>On infrastructure I am learning how to master Kubernetes. When developing, Docker and PostgresSQL are my day to day.</p>
+					<p>In some of my companies we used Amazon AWS. Even if I am not an expert on their services I have some hands-on knowleadge. The same applies to Terraform.</p>
+					<h1>How do I Keep Myself Up to Date?</h1>
+					<p>I tend to keep myself busy at learning new stuff. Not only while working but having personal projects where I can deep into technologies I consider important or just fun.</p>
+					<p>This includies things like buying Raspberry Pi's to play around, hiring hosting for my projects...</p>
 					<h1>What I Am Good At?</h1>
-					<p>In my last company, I have been diving into the GoLang world, attending meetups and learning on my day to day job. My company have high code testing standards that we all match turning into a TDD development culture.</p>
+					<p>I like being flexible on what the company needs and learn all its stack.</p>
+					<p>When I find areas where things can be improved I like to propse such cahnges.</p>
 					<h1>What Are My Passions?</h1>
 					<p>The development world is a continuous learning universe. I love when I have the opportunity of learning at work.</p>
 					<p>In my free time, I enjoy reading, meeting my friends, new people and travelling.</p>
@@ -164,7 +172,7 @@ class Home extends Component{
 		);
 	}
 }
-class CurriculumVitae extends Component{
+class CurriculumVitae extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -175,57 +183,15 @@ class CurriculumVitae extends Component{
 	}
 
 	componentDidMount() {
-			this.setState(
-				{
-					isLoaded:true,
-					lifeEvents: {
-						lifeEvent0: {
-							StartDate: "01/01/2021",
-							EndDate: "Now",
-							Name: "Software Engieneer",
-							Summary: `I help building edgeretreats.com API and Website`,
-							Description: `I build new backend features in Go and in React. I use docker and kubernetes.`,
-							ShownOrder: 1
-						},
-						lifeEvent1: {
-							StartDate: "01/06/2018",
-							EndDate: "01/01/2021",
-							Name: "Software Engieneer",
-							Summary: `I help building the Filtered.com API`,
-							Description: `Build new backend features for filtered.com.`,
-							ShownOrder: 1
-						},
-						lifeEvent2:{
-							StartDate: "05/06/2016",
-							EndDate: "14/05/2018",
-							Name: "Full Stack Developer and Support Leader",
-							Summary: "Full Stack Developer and Support Leader in leading industry company SmarterClick.com. (London)",
-							Description: `As an small company in continuous grow, Smarter Click has challenged me from the beginning in different areas inside the tech and development world.`,
-							ShownOrder: 2
-						},
-						lifeEvent3:{
-							StartDate:"01/01/2016",
-							EndDate:"01/04/2016",
-							Name:"Project Manager",
-							Summary: `Project Manager for the IT department in WatchFit. Managing a team of 4 people: 3 remote workers
-and 1 intern in the office. (London)`,
-							Description:`- Project Management: Using Agile Methodology approach and RedMine as a project management
-software tool.
-- Testing: Ensuring that the software is ready to be deployed.
-- GitHub: Manage software versions with GigHub. Experience with its functionalities (branches, merges, checkouts, pull, push...)
-- Coding: front-end pages (HTHML/CSS) and PHP including a bit of Yii framework.
-- WordPress: Including fixing problems, changes, creating plug-ins for emails notification, Disqus integration...
-- SQL: Design for storing new features needs and SQL sentences for getting information.`,
-							ShownOrder: 3
-						},
-
-						
-					}
-				}
-			)
+		this.setState(
+			{
+				isLoaded: true,
+				lifeEvents: cvEvents(),
+			}
+		)
 	}
 
-	render(){
+	render() {
 		return (
 			<section>
 				<Helmet>
@@ -234,15 +200,15 @@ software tool.
 					<link rel="canonical" href="https://victorsesma.com/curriculum-vitae" />
 					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
 				</Helmet>
-				{Object.keys(this.state.lifeEvents).map((lifeEvent)=>
-					<LifeEvent key={this.state.lifeEvents[lifeEvent].ShownOrder} lifeEvent={this.state.lifeEvents[lifeEvent]}/>
+				{Object.keys(this.state.lifeEvents).map((lifeEvent) =>
+					<LifeEvent key={this.state.lifeEvents[lifeEvent].ShownOrder} lifeEvent={this.state.lifeEvents[lifeEvent]} />
 				)}
 			</section>
 		);
 	}
 }
 
-class Header extends Component{
+class Header extends Component {
 	componentDidMount() {
 		const s = document.createElement('script');
 		s.type = 'text/javascript';
@@ -250,81 +216,81 @@ class Header extends Component{
 		s.innerHTML = "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-54TXN3H')";
 		document.head.appendChild(s);
 	}
-	render(){
+	render() {
 		return (
 			<header className="App-header">
-        		<PersonSummary conf={this.props.conf} />
+				<PersonSummary conf={this.props.conf} />
 				<Menu />
 				<Ad />
-      		</header>
+			</header>
 		);
 	}
 }
 
 const Menu = (props) => {
-    return (
-			<div className="Header-menu">
-				<div className="Header-menu-item"><NavLink to="/" exact activeClassName={"Header-in-page"}>About Me</NavLink></div>
-				<div className="Header-menu-item"><NavLink to="/curriculum-vitae" activeClassName={"Header-in-page"}>Curriculum Vitae</NavLink></div>
-				<div className="Header-menu-item"><NavLink to="/contact-me" activeClassName={"Header-in-page"}>Contact Me</NavLink></div>
-			</div>
-    );
+	return (
+		<div className="Header-menu">
+			<div className="Header-menu-item"><NavLink to="/" exact activeClassName={"Header-in-page"}>About Me</NavLink></div>
+			<div className="Header-menu-item"><NavLink to="/curriculum-vitae" activeClassName={"Header-in-page"}>Curriculum Vitae</NavLink></div>
+			<div className="Header-menu-item"><NavLink to="/contact-me" activeClassName={"Header-in-page"}>Contact Me</NavLink></div>
+		</div>
+	);
 }
 
-class PersonSummary extends Component{
-	render(){
-		return(
+class PersonSummary extends Component {
+	render() {
+		return (
 			<div className="Person-summary">
-				<PersonImg conf={this.props.conf}/>
-				<PersonText conf={this.props.conf}/>
+				<PersonImg conf={this.props.conf} />
+				<PersonText conf={this.props.conf} />
 			</div>
 		);
 	}
 }
 
-class PersonImg extends Component{
+class PersonImg extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {showVideo:false};
+		this.state = { showVideo: false };
 		this.handleClick = this.handleClick.bind(this);
 	}
-	handleClick(){
+	handleClick() {
 		console.log('clicked');
 		this.setState(
-			{showVideo:!this.state.showVideo}
+			{ showVideo: !this.state.showVideo }
 		);
 	}
 
-	render(){
-		const altName = (this.props.conf.candidateInfo.name+this.props.conf.candidateInfo.surname).replace(' ','');
-		return(
+	render() {
+		const altName = (this.props.conf.candidateInfo.name + this.props.conf.candidateInfo.surname).replace(' ', '');
+		return (
 			<div className="Person-img">
 				<img onClick={this.handleClick} src={userImage} className="User-img" alt={altName} />
-				<YouTube video="1VYFlIOdAfY" showVideo={this.state.showVideo} handleClick = {this.handleClick} />
+				<YouTube video="1VYFlIOdAfY" showVideo={this.state.showVideo} handleClick={this.handleClick} />
 			</div>
 		);
 	}
 }
 
 
-class YouTube extends Component{
-	render(){
+class YouTube extends Component {
+	render() {
 		var videoSrc = "https://www.youtube.com/embed/" +
-				this.props.video + "?autoplay=" +
-				this.props.autoplay + "&rel=" +
-				this.props.rel + "&modestbranding=" +
-				this.props.modest;
-		var title = "youtube-"+this.props.title;
-		if(this.props.showVideo !== false){
-			return(
+			this.props.video + "?autoplay=" +
+			this.props.autoplay + "&rel=" +
+			this.props.rel + "&modestbranding=" +
+			this.props.modest;
+		var title = "youtube-" + this.props.title;
+		if (this.props.showVideo !== false) {
+			return (
 				<div className="YouTubeContainer" onClick={this.props.handleClick}>
 					<div className="YouTube-overlay">
-						<iframe className="YouTube-player" type="text/html" title={title} src={videoSrc} frameBorder="0"/>
+						<iframe className="YouTube-player" type="text/html" title={title} src={videoSrc} frameBorder="0" />
 					</div>
 				</div>
 			);
-		}else{
-			return(
+		} else {
+			return (
 				null
 			);
 		}
@@ -332,14 +298,14 @@ class YouTube extends Component{
 }
 
 
-function PersonName (conf){
-		var fullName = conf.candidateInfo.name+' '+conf.candidateInfo.surname;
-		return fullName;
+function PersonName(conf) {
+	var fullName = conf.candidateInfo.name + ' ' + conf.candidateInfo.surname;
+	return fullName;
 }
 
-class PersonText extends Component{
-	render(){
-		return(
+class PersonText extends Component {
+	render() {
+		return (
 			<div className="Person-text">
 				<p className="Person-name">
 					{PersonName(this.props.conf)}
@@ -352,9 +318,9 @@ class PersonText extends Component{
 	}
 }
 
-class Footer extends Component{
-	render(){
-		return(
+class Footer extends Component {
+	render() {
+		return (
 			<div className="Footer">
 				<ul>
 					<li>
@@ -378,24 +344,24 @@ class Footer extends Component{
 	}
 }
 
-class LifeEvent extends Component{
-	render(){
+class LifeEvent extends Component {
+	render() {
 
-		return(
-				<article className="Life-event">
-					<div className="Life-event-headline">
-						<div className="Life-event-date">
-							{this.props.lifeEvent.StartDate}-{this.props.lifeEvent.EndDate}
-						</div>
-						<div className="Life-event-title">
-							<h1 className="Life-event-name">{this.props.lifeEvent.Name}</h1>
-							<span className="Life-event-summary">{this.props.lifeEvent.Summary}</span>
-						</div>
+		return (
+			<article className="Life-event">
+				<div className="Life-event-headline">
+					<div className="Life-event-date">
+						{this.props.lifeEvent.StartDate}-{this.props.lifeEvent.EndDate}
 					</div>
-					<div className="Life-event-description">
-						<p>{this.props.lifeEvent.Description}</p>
+					<div className="Life-event-title">
+						<h1 className="Life-event-name">{this.props.lifeEvent.Name}</h1>
+						<span className="Life-event-summary">{this.props.lifeEvent.Summary}</span>
 					</div>
-				</article>
+				</div>
+				<div className="Life-event-description">
+					<p>{this.props.lifeEvent.Description}</p>
+				</div>
+			</article>
 		);
 	}
 }
