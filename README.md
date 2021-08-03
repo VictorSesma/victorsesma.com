@@ -10,11 +10,19 @@ If you have already isntalled it it should work with only:
 `npm start`
 
 ## How to Depoy
+Note I have followed this article to manage versions and cache: [https://dev.to/flexdinesh/cache-busting-a-react-app-22lk](https://dev.to/flexdinesh/cache-busting-a-react-app-22lk)
 1. Install [npm and nodejs](https://nodejs.org/en/download/package-manager/)
 2. Clone the repository (for example: `git clone git@github.com:leviatan89/victorsesma.com.git`)
 3. `npm install` to download all the npm dependencies
-4. Run `npm run build`
-5. Copy all the files under `build` to your static web server
+4. Use any of these to commit:
+```
+    npm version patch — for releases with only bug fixes
+    npm version minor — for releases with new features w/ or w/o bug fixes
+    npm version major — for major releases or breaking features
+```
+5. `git push --tags` to update the tags.
+6. Run `npm run build`
+7. Copy all the files under `build` to your static web server
 
 ## How to run audits
 To update and fix library issues run: `npm audit fix`

@@ -4,7 +4,7 @@ export const cvEvents = () => {
         lifeEvent0: {
             StartDate: "01/01/2021",
             EndDate: "Now",
-            Name: "Software Engieneer",
+            Name: "Go Software Engieneer",
             Summary: `I help building edgeretreats.com API and Website`,
             Description: `I build new backend features in Go and in React. I use docker and kubernetes.`,
             ShownOrder: 1
@@ -12,7 +12,7 @@ export const cvEvents = () => {
         lifeEvent1: {
             StartDate: "01/06/2018",
             EndDate: "01/01/2021",
-            Name: "Software Engieneer",
+            Name: "Go Software Engieneer",
             Summary: `I help building the Filtered.com API`,
             Description: `Build new backend features for filtered.com.`,
             ShownOrder: 1
