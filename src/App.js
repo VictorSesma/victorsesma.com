@@ -152,21 +152,18 @@ class Home extends Component {
 				</Helmet>
 				<div className="Content">
 					<h1>Who Am I?</h1>
-					<p>I am a software engiennier based in London that grew up in Alicante, Spain.</p>
-					<p>I have been doing professional programing for the last 5 years.</p>
-					<p>My career started with PHP to then switch to Go (GoLang) as my main language but not the only.</p>
-					<p>During my career I am also using other technologies such Django Python and ReactJS.</p>
-					<p>On infrastructure I am learning how to master Kubernetes. When developing, Docker and PostgresSQL are my day to day.</p>
-					<p>In some of my companies we used Amazon AWS. Even if I am not an expert on their services I have some hands-on knowleadge. The same applies to Terraform.</p>
+					<p>I am a software engineer based in London that grew up in Alicante, Spain.</p>
+					<p>I have been doing professional programming for the last 5 years.</p>
+					<p>I am now <b>strong (4 years experience) in Go</b> (Golang). In early times I started programming on PHP.</p>
+					<p>During my career, I have been using also other technologies such as <b>Django Python and ReactJS</b> (This page is built in ReactJS).</p>
+					<p>On <b>infrastructure</b> I am learning how to master <b>Kubernetes</b>. On my day-to-day, I also use <b>Docker and PostgresSQL</b>.</p>
+					<p>In some of my companies, we used Amazon AWS. Even if I am not an expert on their services I have some hands-on knowledge. The same applies to Terraform.</p>
 					<h1>How do I Keep Myself Up to Date?</h1>
-					<p>I tend to keep myself busy at learning new stuff. Not only while working but having personal projects where I can deep into technologies I consider important or just fun.</p>
-					<p>This includies things like buying Raspberry Pi's to play around, hiring hosting for my projects...</p>
-					<h1>What I Am Good At?</h1>
-					<p>I like being flexible on what the company needs and learn all its stack.</p>
-					<p>When I find areas where things can be improved I like to propse such cahnges.</p>
-					<h1>What Are My Passions?</h1>
-					<p>The development world is a continuous learning universe. I love when I have the opportunity of learning at work.</p>
-					<p>In my free time, I enjoy reading, meeting my friends, new people and travelling.</p>
+					<p>I tend to keep myself busy at learning new stuff. Not only at work but having personal projects where I can deep dive into technologies I consider important... or just fun.</p>
+					<p>These include things like buying Raspberry Pi's to play around with or hiring hosting for my projects...</p>
+					<h1>What Am I Good At?</h1>
+					<p>Writing Go programs, including test, adapting to the project's infrastructure or creating it from 0, learning new languages for maintenance on legacy projects, SQL databases...</p>
+					<p>Most of my carreer has been in start-up companies, very flexible an dynamic.</p>
 				</div>
 			</article>
 		);
