@@ -9,6 +9,7 @@ import linkedinIconHover from './linkedInHover.svg';
 import twitterIconHover from './twitterHover.svg';
 import githubIconHover from './githubHover.svg';
 import structuredDataVictor from './headers/headers.js';
+import CacheBuster from './CacheBuster';
 import cvEvents from './texts/cv.js'
 import './App.css';
 
@@ -16,25 +17,37 @@ import './App.css';
 class App extends Component {
 	render() {
 		return (
-			<Router>
-				<div className="App">
-					<Header conf={this.props.conf} />
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path='/&*' component={Home} /> {/* This route helps with malformed queries */}
-						<Route path='/+*' component={Home} /> {/* This route helps with malformed queries */}
-						<Route
-							path="/curriculum-vitae"
-							render={() => (
-								<CurriculumVitae {...this.props} />
-							)}
-						/>
-						<Route path="/contact-me" component={ContactMe} />
-						<Route component={My404Component} />
-					</Switch>
-					<Footer />
-				</div>
-			</Router>
+			<CacheBuster>
+				{({ loading, isLatestVersion, refreshCacheAndReload	}) => {
+					if (loading) return null;
+					if (!loading && !isLatestVersion) {
+						refreshCacheAndReload();
+					}
+					return (
+						<Router>
+							<div className="App">
+								<Header conf={this.props.conf} />
+								<Switch>
+									<Route path="/" exact component={Home} />
+									<Route path='/&*' component={Home} /> {/* This route helps with malformed queries */}
+									<Route path='/+*' component={Home} /> {/* This route helps with malformed queries */}
+									<Route
+										path="/curriculum-vitae"
+										render={() => (
+											<CurriculumVitae {...this.props} />
+										)}
+									/>
+									<Route path="/contact-me" component={ContactMe} />
+									<Route component={My404Component} />
+								</Switch>
+								<Footer />
+							</div>
+						</Router>
+					)
+				}
+				}
+
+			</CacheBuster>
 		);
 	}
 }
