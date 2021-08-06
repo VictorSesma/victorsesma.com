@@ -8,7 +8,7 @@ import githubIcon from './github.svg';
 import linkedinIconHover from './linkedInHover.svg';
 import twitterIconHover from './twitterHover.svg';
 import githubIconHover from './githubHover.svg';
-import structuredDataVictor from './headers/headers.js';
+import structuredDataVictor from './components/headers/headers.js';
 import CacheBuster from './CacheBuster';
 import cvEvents from './texts/cv.js'
 import './App.css';
@@ -167,7 +167,7 @@ class Home extends Component {
 					<h1>Who Am I?</h1>
 					<p>I am a software engineer based in London that grew up in Alicante, Spain.</p>
 					<p>I have been doing professional programming for the last 5 years.</p>
-					<p>I am now <b>strong (4 years experience) in Go</b> (Golang). In early times I started programming on PHP.</p>
+					<p>I have now <b>4 years of strong experience in Go</b> (Golang). In early times I started programming on PHP.</p>
 					<p>During my career, I have been using also other technologies such as <b>Django Python and ReactJS</b> (This page is built in ReactJS).</p>
 					<p>On <b>infrastructure</b> I am learning how to master <b>Kubernetes</b>. On my day-to-day, I also use <b>Docker and PostgresSQL</b>.</p>
 					<p>In some of my companies, we used Amazon AWS. Even if I am not an expert on their services I have some hands-on knowledge. The same applies to Terraform.</p>
@@ -175,7 +175,7 @@ class Home extends Component {
 					<p>I tend to keep myself busy at learning new stuff. Not only at work but having personal projects where I can deep dive into technologies I consider important... or just fun.</p>
 					<p>These include things like buying Raspberry Pi's to play around with or hiring hosting for my projects...</p>
 					<h1>What Am I Good At?</h1>
-					<p>Writing Go programs, including test, adapting to the project's infrastructure or creating it from 0, learning new languages for maintenance on legacy projects, SQL databases...</p>
+					<p>Writing Go programs, including tests, adapting to the project's infrastructure or creating it from 0, learning new languages for maintenance on legacy projects, SQL databases...</p>
 					<p>Most of my carreer has been in start-up companies, very flexible an dynamic.</p>
 				</div>
 			</article>
@@ -275,35 +275,9 @@ class PersonImg extends Component {
 		const altName = (this.props.conf.candidateInfo.name + this.props.conf.candidateInfo.surname).replace(' ', '');
 		return (
 			<div className="Person-img">
-				<img onClick={this.handleClick} src={userImage} className="User-img" alt={altName} />
-				<YouTube video="1VYFlIOdAfY" showVideo={this.state.showVideo} handleClick={this.handleClick} />
+				<img src={userImage} className="User-img" alt={altName} />
 			</div>
 		);
-	}
-}
-
-
-class YouTube extends Component {
-	render() {
-		var videoSrc = "https://www.youtube.com/embed/" +
-			this.props.video + "?autoplay=" +
-			this.props.autoplay + "&rel=" +
-			this.props.rel + "&modestbranding=" +
-			this.props.modest;
-		var title = "youtube-" + this.props.title;
-		if (this.props.showVideo !== false) {
-			return (
-				<div className="YouTubeContainer" onClick={this.props.handleClick}>
-					<div className="YouTube-overlay">
-						<iframe className="YouTube-player" type="text/html" title={title} src={videoSrc} frameBorder="0" />
-					</div>
-				</div>
-			);
-		} else {
-			return (
-				null
-			);
-		}
 	}
 }
 
