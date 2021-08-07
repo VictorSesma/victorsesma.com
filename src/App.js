@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import userImage from './victorSesma.png';
 import linkedinIcon from './linkedIn.svg';
 import twitterIcon from './twitter.svg';
@@ -8,17 +7,18 @@ import githubIcon from './github.svg';
 import linkedinIconHover from './linkedInHover.svg';
 import twitterIconHover from './twitterHover.svg';
 import githubIconHover from './githubHover.svg';
-import structuredDataVictor from './components/headers/headers.js';
+import FullHelmet from './components/headers/fullHelmet.js';
 import CacheBuster from './CacheBuster';
-import cvEvents from './texts/cv.js'
+import cvEvents from './texts/cv.js';
 import './App.css';
+
 
 
 class App extends Component {
 	render() {
 		return (
 			<CacheBuster>
-				{({ loading, isLatestVersion, refreshCacheAndReload	}) => {
+				{({ loading, isLatestVersion, refreshCacheAndReload }) => {
 					if (loading) return null;
 					if (!loading && !isLatestVersion) {
 						refreshCacheAndReload();
@@ -31,12 +31,7 @@ class App extends Component {
 									<Route path="/" exact component={Home} />
 									<Route path='/&*' component={Home} /> {/* This route helps with malformed queries */}
 									<Route path='/+*' component={Home} /> {/* This route helps with malformed queries */}
-									<Route
-										path="/curriculum-vitae"
-										render={() => (
-											<CurriculumVitae {...this.props} />
-										)}
-									/>
+									<Route path="/curriculum-vitae" component={CurriculumVitae} />
 									<Route path="/contact-me" component={ContactMe} />
 									<Route component={My404Component} />
 								</Switch>
@@ -141,12 +136,7 @@ class ContactMe extends Component {
 	render() {
 		return (
 			<article>
-				<Helmet>
-					<title>Contact Me - Victor Sesma</title>
-					<meta property="og:image" content={userImage} />
-					<link rel="canonical" href="https://victorsesma.com/contact-me" />
-					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
-				</Helmet>
+				<FullHelmet path={this.props.location.pathname} />
 				<ContactHeader />
 			</article>
 		);
@@ -157,12 +147,7 @@ class Home extends Component {
 	render() {
 		return (
 			<article>
-				<Helmet>
-					<title>Home - Victor Sesma</title>
-					<meta property="og:image" content={userImage} />
-					<link rel="canonical" href="https://victorsesma.com/" />
-					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
-				</Helmet>
+				<FullHelmet path={this.props.location.pathname} />
 				<div className="Content">
 					<h1>Who Am I?</h1>
 					<p>I am a software engineer based in London that grew up in Alicante, Spain.</p>
@@ -204,12 +189,7 @@ class CurriculumVitae extends Component {
 	render() {
 		return (
 			<section>
-				<Helmet>
-					<title>Curriculum Vitae - Victor Sesma</title>
-					<meta property="og:image" content={userImage} />
-					<link rel="canonical" href="https://victorsesma.com/curriculum-vitae" />
-					<script className='structured-data-list' type="application/ld+json">{structuredDataVictor()}</script>
-				</Helmet>
+				<FullHelmet path={this.props.location.pathname} />
 				{Object.keys(this.state.lifeEvents).map((lifeEvent) =>
 					<LifeEvent key={this.state.lifeEvents[lifeEvent].ShownOrder} lifeEvent={this.state.lifeEvents[lifeEvent]} />
 				)}

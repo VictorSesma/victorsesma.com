@@ -7,7 +7,7 @@ export const cvEvents = () => {
             Name: "Go Software Engieneer",
             Summary: `I help building edgeretreats.com API and Website`,
             Description: `I build new backend features in Go and in React. I use docker and kubernetes.`,
-            ShownOrder: 1
+            ShownOrder: 0
         },
         lifeEvent1: {
             StartDate: "01/06/2018",

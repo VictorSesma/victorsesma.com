@@ -1,4 +1,4 @@
-export const structuredDataVictor = () => {
+export const StructuredDataVictor = () => {
 
     let data = {
         '@context': 'https://schema.org',
@@ -8,7 +8,7 @@ export const structuredDataVictor = () => {
             'addressLocality': 'London'
         },
         'email': 'hi@victorsesma.com',
-        'image': 'public/victorSesma.png',
+        'image': 'victorSesma.png',
         'jobTitle': 'Software Engineer',
         'name': 'Victor Sesma',
         'alumniOf': 'Colegio Don Bosco Alicante',
@@ -27,4 +27,4 @@ export const structuredDataVictor = () => {
     return JSON.stringify(data);
 };
 
-export default structuredDataVictor
+export default StructuredDataVictor
