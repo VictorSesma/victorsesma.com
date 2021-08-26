@@ -150,11 +150,11 @@ class Home extends Component {
 				<FullHelmet path={this.props.location.pathname} />
 				<div className="Content">
 					<h1>Who Am I?</h1>
-					<p>I am a software engineer based in London that grew up in Alicante, Spain.</p>
+					<p>I am a Golang software engineer based in London that grew up in Alicante, Spain.</p>
 					<p>I have been doing professional programming for the last 5 years.</p>
-					<p>I have now <b>4 years of strong experience in Go</b> (Golang). In early times I started programming on PHP.</p>
+					<p>I have now <b>4 years of strong experience in Go</b> (Golang). In my early days as developer I started programming on PHP.</p>
 					<p>During my career, I have been using also other technologies such as <b>Django Python and ReactJS</b> (This page is built in ReactJS).</p>
-					<p>On <b>infrastructure</b> I am learning how to master <b>Kubernetes</b>. On my day-to-day, I also use <b>Docker and PostgresSQL</b>.</p>
+					<p>On <b>infrastructure</b> I have knowledge about <b>Kubernetes</b>. On my day-to-day, I also use <b>Docker and PostgresSQL</b>.</p>
 					<p>In some of my companies, we used Amazon AWS. Even if I am not an expert on their services I have some hands-on knowledge. The same applies to Terraform.</p>
 					<h1>How do I Keep Myself Up to Date?</h1>
 					<p>I tend to keep myself busy at learning new stuff. Not only at work but having personal projects where I can deep dive into technologies I consider important... or just fun.</p>
@@ -288,7 +288,7 @@ class Footer extends Component {
 			<div className="Footer">
 				<ul>
 					<li>
-						<a href="https://github.com/leviatan89" target="_blank" rel="noopener noreferrer">Source Code</a>
+						<a href="https://github.com/leviatan89/victorsesma.com" target="_blank" rel="noopener noreferrer">Source Code</a>
 					</li>
 					<li>
 						<a href="https://cli.ginernet.com/aff.php?aff=135" target="_blank" rel="noopener noreferrer">Hosted by GINERNET</a>
