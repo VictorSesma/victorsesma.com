@@ -2,30 +2,38 @@
 export const cvEvents = () => {
     let cv = {
         lifeEvent0: {
-            StartDate: "01/01/2021",
+            StartDate: "01/10/2021",
             EndDate: "Now",
             Name: "Go Software Engieneer",
-            Summary: `I help building edgeretreats.com API and Website`,
-            Description: `I build new backend features in Go and in React. I use docker and kubernetes.`,
+            Summary: `I help integrating clients on xiatech.co.uk`,
+            Description: `I build and mantain backend integrations in Go.`,
             ShownOrder: 0
         },
         lifeEvent1: {
+            StartDate: "01/01/2021",
+            EndDate: "01/10/2021",
+            Name: "Go Software Engieneer",
+            Summary: `I help building edgeretreats.com API and Website`,
+            Description: `I build new backend features in Go and in React. I use docker and kubernetes.`,
+            ShownOrder: 1
+        },
+        lifeEvent2: {
             StartDate: "01/06/2018",
             EndDate: "01/01/2021",
             Name: "Go Software Engieneer",
             Summary: `I help building the Filtered.com API`,
             Description: `Build new backend features for filtered.com.`,
-            ShownOrder: 1
+            ShownOrder: 2
         },
-        lifeEvent2: {
+        lifeEvent3: {
             StartDate: "05/06/2016",
             EndDate: "14/05/2018",
             Name: "Full Stack Developer and Support Leader",
             Summary: "Full Stack Developer and Support Leader in leading industry company SmarterClick.com. (London)",
             Description: `As an small company in continuous grow, Smarter Click has challenged me from the beginning in different areas inside the tech and development world.`,
-            ShownOrder: 2
+            ShownOrder: 3
         },
-        lifeEvent3: {
+        lifeEvent4: {
             StartDate: "01/01/2016",
             EndDate: "01/04/2016",
             Name: "Project Manager",
@@ -38,7 +46,7 @@ software tool.
 - Coding: front-end pages (HTHML/CSS) and PHP including a bit of Yii framework.
 - WordPress: Including fixing problems, changes, creating plug-ins for emails notification, Disqus integration...
 - SQL: Design for storing new features needs and SQL sentences for getting information.`,
-            ShownOrder: 3
+            ShownOrder: 4
         },
     };
 
