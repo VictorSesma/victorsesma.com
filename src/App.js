@@ -59,21 +59,6 @@ class My404Component extends Component {
 	}
 }
 
-class Ad extends Component {
-	componentDidMount() {
-		(window.adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-3535299454867786",
-			enable_page_level_ads: true
-		});
-	}
-
-	render() {
-		return (
-			null
-		);
-	}
-}
-
 class ContactHeader extends Component {
 	constructor(props) {
 		super(props);
@@ -211,7 +196,6 @@ class Header extends Component {
 			<header className="App-header">
 				<PersonSummary conf={this.props.conf} />
 				<Menu />
-				<Ad />
 			</header>
 		);
 	}
