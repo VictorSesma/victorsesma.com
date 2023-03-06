@@ -9,7 +9,7 @@ If is the first time you are starting the project clone the repo, install npm an
 If you have already isntalled it it should work with only:
 `npm start`
 
-## How to Depoy
+## How to Deploy
 Note I have followed this article to manage versions and cache: [https://dev.to/flexdinesh/cache-busting-a-react-app-22lk](https://dev.to/flexdinesh/cache-busting-a-react-app-22lk)
 1. Install [npm and nodejs](https://nodejs.org/en/download/package-manager/)
 2. Clone the repository (for example: `git clone git@github.com:leviatan89/victorsesma.com.git`)
