@@ -147,6 +147,8 @@ class Home extends Component {
 					<h1>What Am I Good At?</h1>
 					<p>Writing Go programs, including tests, adapting to the project's infrastructure or creating it from 0, learning new languages for maintenance on legacy projects, SQL databases...</p>
 					<p>Most of my carreer has been in start-up companies, very flexible an dynamic.</p>
+					<h1>Side Hustles</h1>
+					<p>I am also the author of a website called <a href="https://alicanteabout.com">alicanteabout.com</a>. I write there about the city in Spain I am originally from, Alicante.</p>
 				</div>
 			</article>
 		);
