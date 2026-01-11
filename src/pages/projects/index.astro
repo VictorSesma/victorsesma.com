@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Main from "@/layouts/Main.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projects } from "@/data/projects";
+---
+
+<Layout title="Projects | Victor Sesma" description="Projects and work by Victor Sesma">
+  <Header activeNav="projects" />
+  <Main pageTitle="Projects" pageDesc="A collection of my projects and work.">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map(project => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            href={project.primaryLink.href}
+            image={project.image}
+            imageAlt={project.imageAlt}
+            status={project.status}
+          />
+        ))
+      }
+    </div>
+  </Main>
+  <Footer />
+</Layout>
