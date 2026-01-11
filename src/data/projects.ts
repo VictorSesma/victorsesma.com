@@ -23,10 +23,10 @@ export const projects: Project[] = [
     href: "https://alicanteabout.com",
     description:
       "Constrained assistant grounded in site content (RAG) with human-in-the-loop patterns to reduce hallucinations.",
-    image: "/projects/alicanteabout-chatbot.jpg",
+    image: "/projects/alicanteabout-chatbot.webp",
     primaryLink: { label: "Case study", href: "/blog/designing-a-tourist-chatbot" },
-    secondaryLinks: [{ label: "Repo", href: "https://github.com/yourusername/..." }],
+    secondaryLinks: [{ label: "Repo", href: "https://github.com/VictorSesma/wptheme" }],
     tags: ["AI Systems", "RAG", "Architecture"],
-    status: "case-study",
+    status: "concept",
   },
 ];

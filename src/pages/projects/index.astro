@@ -16,8 +16,10 @@ import { projects } from "@/data/projects";
           <ProjectCard
             title={project.title}
             description={project.description}
-            href={project.href}
+            href={project.primaryLink.href}
             image={project.image}
+            imageAlt={project.imageAlt}
+            status={project.status}
           />
         ))
       }
