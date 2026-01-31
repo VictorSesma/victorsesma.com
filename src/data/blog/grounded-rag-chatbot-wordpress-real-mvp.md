@@ -1,6 +1,6 @@
 ---
 author: Victor Sesma
-pubDatetime: 2026-01-31T23:05:05Z
+pubDatetime: 2026-01-31T22:33:44Z
 title: Designing a grounded RAG chatbot for a content-heavy WordPress site
 slug: grounded-rag-chatbot-wordpress-real-mvp
 featured: true
