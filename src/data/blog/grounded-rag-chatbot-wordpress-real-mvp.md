@@ -69,6 +69,8 @@ If an answer can’t be traced back to content, I’d rather not answer at all.
 
 ## High-level architecture
 
+![RAG architecture for a WordPress-based chatbot](../../../public/posts/grounded-rag-chatbot-wordpress-real-mvp/alicanteabout-rag-chatbot-architecture.png)
+
 I designed this as a functional MVP, not as a startup product.
 
 The system has three main components:
@@ -126,6 +128,10 @@ Confidently wrong answers are worse than no answer.
 The system is explicitly designed to refuse answering when the retrieved content isn’t relevant enough. In those cases, the correct behavior is to say “I don’t know based on the site content”.
 
 This was a deliberate design choice.
+
+Here is a screenshot showcasing the Alicante About chatbot in action:
+
+![Alicanteabout.com chatbot in action](../../../public/posts/grounded-rag-chatbot-wordpress-real-mvp/alicanteabout_com-chatbot-in-action.png)
 
 ## Observability
 
