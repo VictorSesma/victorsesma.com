@@ -173,6 +173,6 @@ Most of the value still comes from deciding _what to build_ and _what not to bui
 
 ## Final Notes
 
-I have published the MVP implementation of [this project on GitHub as a reference](https://github.com/VictorSesma/content-rag-chat). It contains the system as it is today. With all the trade-offs and constrains.
+I have published the MVP implementation of [this project on GitHub as a reference](https://github.com/VictorSesma/alicanteabout-rag-chat-mvp). It contains the system as it is today. With all the trade-offs and constrains.
 
 The chatbot you see when visiting [AlicanteAbout.com](https://alicanteabout.com) might be different as I will iterating on it more privatelly.
