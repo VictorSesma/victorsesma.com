@@ -38,3 +38,4 @@ Local notes for agents working in this repo.
 - When running `git rebase`, avoid opening editors—export `GIT_EDITOR=:` and `GIT_SEQUENCE_EDITOR=:` (or pass `--no-edit`) so the default messages are used automatically.
 - Never amend commits unless you have explicit written approval in the task thread.
 - Make commits during tasks by default unless the user requests otherwise.
+- Run lint (pnpm run lint) before commiting and fix issues lint might rise
