@@ -9,7 +9,6 @@ import Card from "@/components/Card.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 
 const posts = await getCollection("blog");
@@ -42,50 +41,42 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </a>
 
       <p>
-       Golang backend engineer focused on system design, reliability, and AI-augmented
-       engineering. I write case studies and practical notes—no hype, just
-       trade-offs.
+        Golang backend engineer focused on system design, reliability, and
+        AI-augmented engineering. I write case studies and practical notes—no
+        hype, just trade-offs.
       </p>
 
       <ul class="mt-4 max-w-2xl list-disc space-y-1 ps-5">
         <li>Go (Golang) · distributed systems · pragmatic architecture</li>
-        <li>Observability, incident-minded engineering, and production ergonomics</li>
-        <li>Applied AI: constrained assistants, RAG, human-in-the-loop workflows</li>
+        <li>
+          Observability, incident-minded engineering, and production ergonomics
+        </li>
+        <li>
+          Applied AI: constrained assistants, RAG, human-in-the-loop workflows
+        </li>
       </ul>
 
       <div class="mt-5 flex flex-wrap gap-3">
         <LinkButton
           class="inline-block rounded-md border border-border px-4 py-2 hover:text-accent"
           href="/blog"
-          >
-         Read the blog
+        >
+          Read the blog
         </LinkButton>
 
         <LinkButton
           class="inline-block rounded-md border border-border px-4 py-2 hover:text-accent"
           href="/projects"
-          >
+        >
           View projects
         </LinkButton>
 
         <LinkButton
           class="inline-block rounded-md border border-border px-4 py-2 hover:text-accent"
           href="/about"
-          >
+        >
           About
         </LinkButton>
-      </div>
-
-        <a
-          target="_blank"
-          href="/rss.xml"
-          class="mt-6 inline-block shrink-0"
-          aria-label="rss feed"
-          title="RSS Feed"
-        >
-          <IconRss width={20} height={20} class="scale-125 stroke-accent stroke-3 rtl:-rotate-90" />
-          <span class="sr-only">RSS Feed</span>
-        </a>
       </div>
 
       {
@@ -116,7 +107,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           </ul>
         </section>
       )
-      
     }
 
     <div class="my-8 text-center">

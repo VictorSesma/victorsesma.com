@@ -20,6 +20,7 @@ This site exists to document those parts.
 ## What I’m interested in
 
 I care about backend systems that are:
+
 - understandable in production
 - observable when things go wrong
 - owned by someone who can explain why decisions were made
@@ -31,6 +32,7 @@ Lately, this has led me to spend more time thinking about how AI changes backend
 There’s a big gap between an AI demo and an AI system you can trust.
 
 In real systems:
+
 - inputs are messy
 - users ask the wrong questions
 - data is incomplete
@@ -44,6 +46,7 @@ If a system can’t explain its behavior or fail safely, it doesn’t belong in 
 This is not a tutorial blog and not a marketing site.
 
 You’ll mostly find:
+
 - short technical notes
 - architecture write-ups
 - case studies from real or realistic projects

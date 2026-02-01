@@ -4,6 +4,7 @@ type ProjectStatus = "concept" | "in-progress" | "case-study" | "live";
 type Props = {
   title: string;
   description: string;
+  descriptionHtml?: string;
   href: string;
   image: string;
   imageAlt?: string;
@@ -13,6 +14,7 @@ type Props = {
 const {
   title,
   description,
+  descriptionHtml,
   href,
   image,
   imageAlt = title,
@@ -20,17 +22,24 @@ const {
 } = Astro.props;
 ---
 
-<a
-  href={href}
-  class="group relative block overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-accent hover:shadow-md"
+<div
+  class="group bg-card relative overflow-hidden rounded-lg border border-border transition-all hover:border-accent hover:shadow-md"
 >
-  {status && (
-    <span class="absolute right-3 top-3 z-10 rounded-md border border-border bg-background/80 px-2 py-0.5 text-xs font-medium backdrop-blur">
-      {status === "case-study" ? "Case study" : status}
-    </span>
-  )}
+  {
+    status && (
+      <span class="absolute top-3 right-3 z-30 rounded-md border border-border bg-background/80 px-2 py-0.5 text-xs font-medium backdrop-blur">
+        {status === "case-study"
+          ? "Case study"
+          : status === "live"
+            ? "Live MVP"
+            : status}
+      </span>
+    )
+  }
 
-  <div class="aspect-video overflow-hidden bg-muted">
+  <div
+    class="pointer-events-none relative z-20 block aspect-video overflow-hidden bg-muted"
+  >
     <img
       src={image}
       alt={imageAlt}
@@ -38,12 +47,22 @@ const {
     />
   </div>
 
-  <div class="p-4">
-    <h3 class="mb-2 text-lg font-semibold text-accent group-hover:underline">
-      {title}
-    </h3>
-    <p class="text-sm text-muted-foreground">
-      {description}
-    </p>
+  <div class="pointer-events-none relative z-20 p-4">
+    <h3 class="mb-2 text-lg font-semibold text-accent">{title}</h3>
+    {
+      descriptionHtml ? (
+        <p
+          class="text-muted-foreground text-sm break-words"
+          set:html={descriptionHtml}
+        />
+      ) : (
+        <p class="text-muted-foreground text-sm">{description}</p>
+      )
+    }
   </div>
-</a>
+
+  <a
+    href={href}
+    class="absolute inset-0 z-10 rounded-lg"
+    aria-label={`Open ${title}`}></a>
+</div>

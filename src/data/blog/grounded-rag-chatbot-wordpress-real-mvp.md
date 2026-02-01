@@ -36,6 +36,7 @@ That’s where the idea of building a grounded RAG chatbot came from.
 I wasn’t trying to build a fancy chatbot.
 
 What I wanted was:
+
 - fast answers to very concrete questions
 - no hallucinations
 - no made-up information
@@ -58,7 +59,7 @@ AI can be tricky to deploy consciously, so I set some clear constraints early on
 
 ## What I didn’t want to build
 
-It was just as important to decide what *not* to do.
+It was just as important to decide what _not_ to do.
 
 - Not a generic chatbot that “sounds smart”.
 - Not a massive WordPress plugin doing everything.
@@ -69,9 +70,12 @@ If an answer can’t be traced back to content, I’d rather not answer at all.
 
 ## High-level architecture
 
+![RAG architecture for a WordPress-based chatbot](../../../public/posts/grounded-rag-chatbot-wordpress-real-mvp/alicanteabout-rag-chatbot-architecture.png)
+
 I designed this as a functional MVP, not as a startup product.
 
 The system has three main components:
+
 - An offline preparation phase to download, clean, and prepare content for AI consumption.
 - A backend server written in Go that interacts with OpenAI APIs.
 - A lightweight chat UI built specifically for WordPress.
@@ -111,10 +115,11 @@ For this project, a simple file-based cache is enough. A vector database would b
 ## From a user question to an answer
 
 When a user asks a question, the flow is:
+
 1. The question is embedded.
 2. Its embedding is compared against cached chunk embeddings.
 3. The top relevant chunks are selected.
-4. The LLM is asked to answer using *only* those chunks.
+4. The LLM is asked to answer using _only_ those chunks.
 5. The response is returned along with source links.
 
 Only relevant chunks are sent to the model, not full articles. This keeps answers focused and verifiable.
@@ -127,6 +132,10 @@ The system is explicitly designed to refuse answering when the retrieved content
 
 This was a deliberate design choice.
 
+Here is a screenshot showcasing the Alicante About chatbot in action:
+
+![Alicanteabout.com chatbot in action](../../../public/posts/grounded-rag-chatbot-wordpress-real-mvp/alicanteabout_com-chatbot-in-action.png)
+
 ## Observability
 
 For me, a valid MVP also needs visibility into how users interact with it.
@@ -134,6 +143,7 @@ For me, a valid MVP also needs visibility into how users interact with it.
 I log questions asynchronously into a Postgres database, after sanitizing them to avoid storing personal data. Users are also warned not to include personal information.
 
 I store:
+
 - the question
 - a hash to detect repeated questions
 - whether the system answered or refused
@@ -146,6 +156,7 @@ This is enough to understand usage patterns and guide future improvements.
 ## What I’d improve next
 
 Some things I deliberately left out:
+
 - smart handling of real-time data (e.g. tram schedules)
 - multilingual support
 - admin tooling
@@ -158,11 +169,10 @@ An additional goal of this project was to gain hands-on experience with agentic 
 
 While AI tools can write code very quickly, they still need clear instructions and architectural guidance. This project reinforced the idea that AI can accelerate development, but doesn’t replace the need for solid engineering judgment.
 
-Most of the value still comes from deciding *what to build* and *what not to build*.
-
+Most of the value still comes from deciding _what to build_ and _what not to build_.
 
 ## Final Notes
 
-I have published the MVP implementation of [this project on GitHub as a reference](https://github.com/VictorSesma/content-rag-chat). It contains the system as it is today. With all the trade-offs and constrains.
+I have published the MVP implementation of [this project on GitHub as a reference](https://github.com/VictorSesma/alicanteabout-rag-chat-mvp). It contains the system as it is today. With all the trade-offs and constrains.
 
 The chatbot you see when visiting [AlicanteAbout.com](https://alicanteabout.com) might be different as I will iterating on it more privatelly.
