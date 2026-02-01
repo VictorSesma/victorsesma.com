@@ -57,35 +57,23 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <LinkButton
           class="inline-block rounded-md border border-border px-4 py-2 hover:text-accent"
           href="/blog"
-          >
-         Read the blog
+        >
+          Read the blog
         </LinkButton>
 
         <LinkButton
           class="inline-block rounded-md border border-border px-4 py-2 hover:text-accent"
           href="/projects"
-          >
+        >
           View projects
         </LinkButton>
 
         <LinkButton
           class="inline-block rounded-md border border-border px-4 py-2 hover:text-accent"
           href="/about"
-          >
+        >
           About
         </LinkButton>
-      </div>
-
-        <a
-          target="_blank"
-          href="/rss.xml"
-          class="mt-6 inline-block shrink-0"
-          aria-label="rss feed"
-          title="RSS Feed"
-        >
-          <IconRss width={20} height={20} class="scale-125 stroke-accent stroke-3 rtl:-rotate-90" />
-          <span class="sr-only">RSS Feed</span>
-        </a>
       </div>
 
       {
