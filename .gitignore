@@ -26,9 +26,6 @@ pnpm-debug.log*
 # editor settings
 .vscode/
 
-# github metadata
-.github/
-
 # pagefind
 
 public/pagefind
