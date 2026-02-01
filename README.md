@@ -5,8 +5,8 @@ This repository powers my personal portfolio and blog. It is a static site built
 ## Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 The dev server runs at `http://localhost:4321`.

@@ -22,10 +22,10 @@ Quick guide for working in this repo.
 - Tags are strings; tag pages are generated from content metadata.
 
 ## Build and dev
-- Install deps: `npm install`
-- Dev server: `npm run dev` (http://localhost:4321)
-- Build: `npm run build` (runs `astro build`, then Pagefind indexing)
-- Preview: `npm run preview`
+- Install deps: `pnpm install`
+- Dev server: `pnpm run dev` (http://localhost:4321)
+- Build: `pnpm run build` (runs `astro build`, then Pagefind indexing)
+- Preview: `pnpm run preview`
 
 ## Search
 - Pagefind runs during build and outputs to `dist/pagefind`.

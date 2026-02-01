@@ -17,10 +17,10 @@ Local notes for agents working in this repo.
 - Utilities (posts, tags, OG, search): `src/utils/*`
 
 ## Commands
-- `npm install`
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
+- `pnpm install`
+- `pnpm run dev`
+- `pnpm run build`
+- `pnpm run preview`
 
 ## Notes
 - Blog schema is defined in `src/content.config.ts`.
