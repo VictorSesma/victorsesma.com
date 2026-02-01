@@ -16,6 +16,7 @@ This site is where I document what I learn while designing and shipping systemsâ
 ## How I think
 
 I like approaches that are:
+
 - **Explainable**: you can reason about behavior and failure cases
 - **Testable**: thereâ€™s a path to confidence in production
 - **Operational**: metrics, logs, and clear ownership are first-class

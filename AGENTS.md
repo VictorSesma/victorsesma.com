@@ -39,3 +39,4 @@ Local notes for agents working in this repo.
 - Never amend commits unless you have explicit written approval in the task thread.
 - Make commits during tasks by default unless the user requests otherwise.
 - Run lint (pnpm run lint) before commiting and fix issues lint might rise
+- Run format checks (pnpm run format:check) before commiting and fix issues lint might rise

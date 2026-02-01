@@ -25,10 +25,13 @@ export const projects: Project[] = [
     descriptionHtml:
       'Constrained assistant grounded in site content (RAG) with human-in-the-loop patterns to reduce hallucinations. <a href="https://alicanteabout.com" class="pointer-events-auto relative z-30 underline underline-offset-2 break-all">Live demo: alicanteabout.com</a>',
     image: "/projects/alicanteabout-chatbot.webp",
-    primaryLink: { label: "Case study", href: "/blog/grounded-rag-chatbot-wordpress-real-mvp/" },
+    primaryLink: {
+      label: "Case study",
+      href: "/blog/grounded-rag-chatbot-wordpress-real-mvp/",
+    },
     secondaryLinks: [
       { label: "Live site", href: "https://alicanteabout.com" },
-      { label: "Repo", href: "https://github.com/VictorSesma/wptheme" }
+      { label: "Repo", href: "https://github.com/VictorSesma/wptheme" },
     ],
     tags: ["AI Systems", "Architecture"],
     status: "live",
